@@ -8,6 +8,24 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
+## [0.1.4] — 2026-10-25
+
+### Overlay responsiveness
+- Request native repaint immediately after updating advice, and restore the overlay's topmost order without taking keyboard focus. Window movement no longer stands in for a presentation request.
+- Ignore repeated open notifications for an already open preparation screen instead of cancelling and restarting the same read.
+- Preserve the first confirmation/change timestamp across subsequent scene notifications. Keep a bounded per-decision latency journal, so a quick protocol forecast cannot overwrite the evidence of a slow card choice.
+
+### Computation
+- Reduce temporary allocations in action enumeration, policy features and ritual continuation evaluation. Action order, formulas, weights and sample limits are unchanged.
+- Independent checks against v0.1.3 match 324 seeded episode outcomes and a complete fixed-sample search, including raw alternative scores.
+
+### Distribution
+- Development sources and their full history are now private. The unchanged public repository URL distributes README, changelog and releases only; all four existing release assets were migrated with identical digests.
+- Public update checks continue to use the same URL. Future public release tags refer only to documentation commits.
+
+### Measurement
+- Native repaint timing still does not measure physical monitor presentation. Live card-choice latency must be assessed separately from protocol forecasts.
+
 ## [0.1.3] — 2026-10-25
 
 ### Performance
@@ -77,7 +95,7 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Builds are not code-signed. Updates require GitHub access and a writable installation folder. The previous portable folder is retained for recovery.
 - Private builds without an updater require the first public release to be extracted and launched once.
 
-[Unreleased]: https://github.com/quaq1337/riftline-torch/compare/v0.1.3...HEAD
+[Unreleased]: https://github.com/quaq1337/riftline-torch/compare/v0.1.4...HEAD
 [0.1.0]: https://github.com/quaq1337/riftline-torch/releases/tag/v0.1.0
 
 [0.1.1]: https://github.com/quaq1337/riftline-torch/releases/tag/v0.1.1
@@ -85,3 +103,5 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 [0.1.2]: https://github.com/quaq1337/riftline-torch/releases/tag/v0.1.2
 
 [0.1.3]: https://github.com/quaq1337/riftline-torch/releases/tag/v0.1.3
+
+[0.1.4]: https://github.com/quaq1337/riftline-torch/releases/tag/v0.1.4

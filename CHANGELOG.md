@@ -8,6 +8,19 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
+## [0.2.0] - 2026-10-26
+
+### Tartarus preview
+- Connect the Tartarus reader and session advisor to automatic game-window capture and the overlay. Fresh Tartarus log events select the mechanic; a dashboard button provides a fallback when logs are unavailable.
+- Highlight observed routes, consume targets, instrument and treasure choices, plus the current-board preview workflow. Approximate local guidance is explicitly marked `~`; this release does not claim complete effects or full-run optimality.
+- Reject superseded results after clicks, run changes and background transitions. Scale validated normalized highlights to the game client rectangle, including secondary monitors. F8 reads immediately and F9 pauses.
+- Reuse the existing local OCR instance and serialize recognition. Preserve the verified same-frame OCR improvements; do not introduce another recorder or browser capture process. Pause recognition when the game is not foreground.
+- Keep confirmed rainbow history separate from forecasts. Create Tartarus recording folders automatically and save distinct recognized decisions plus the latest game frame for diagnostics.
+- Bundle the three numeric recognition assets and independent current-chain planner. Unsupported effects stay explicit; no fixed priority is assigned to incident exclamation marks.
+- Enable the newly available Tartarus preview profile once when migrating old unavailable defaults; preserve subsequent user opt-outs, settings and history.
+
+Known limits: English game UI, incomplete recognition of instruments/marks/incidents, approximate patrol/tool/treasure policy, and no automatic End action. New event-transition and reward-analysis modules are included for development but are not presented as a complete live reward simulator. This is the first live-play preview and still requires real-run validation.
+
 ## [0.1.8] - 2026-10-26
 
 ### Automatic update discovery

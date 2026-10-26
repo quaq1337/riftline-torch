@@ -8,6 +8,17 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
+## [0.2.2] - 2026-10-26
+
+### Vorax recognition hotfix
+- Recover the shifted five-card fan after Potion Kit (Large) using three independently recognized title anchors.
+- Read each recovered card slot separately so adjacent Pure Leech Solution and Hollow Spinal Solution titles cannot merge or fill the same slot twice.
+- Keep round, total activity, card-name confidence and complete-offer validation intact. No guessed card or missing effect is accepted to bypass a recognition failure.
+- Validate the reported round-five frame with all five cards recognized and no manual corrections.
+- Prefer the running game's own log over a newer log from another installation.
+
+Tartarus remains an experimental preview. The ongoing full-run strategy and effect-integration rewrite is not included in this Vorax-only hotfix.
+
 ## [0.2.1] - 2026-10-26
 
 ### Live Tartarus fixes

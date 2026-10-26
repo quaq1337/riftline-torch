@@ -22,7 +22,7 @@ No separate Python or Node.js installation is required. Windows x64 is supported
 - Automatic screen reading assisted by game-log events, with direct refresh and manual correction for recognition failures.
 - High-contrast card, target and reroll highlights; a compact overlay outside preparation.
 - English/Russian interface, Windows-region default, pet tier selection and local run history.
-- GitHub updates with **Update / Skip**, verified downloads, restart and startup-failure rollback.
+- A compact update row inside the overlay with **Update / Skip**, inline download progress, verified files, restart and startup-failure rollback.
 - Tartarus log-based archive statistics. The full Tartarus advisor is still in development.
 
 Game-card recognition currently requires **English text**. Capture and highlight coordinates follow the game window. Resampled 16:9 captures from 720p through 4K were checked; unusual aspect ratios, UI scales and covered controls need additional validation. Forecasts are estimates and do not guarantee a maximum score.

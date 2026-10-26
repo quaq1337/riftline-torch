@@ -8,6 +8,16 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
+## [0.2.3] - 2026-10-26
+
+### Vorax forecast correction
+- Preserve claimed 8,000/28,000 reward flags when reconstructing protocol-round state. Forecasts for rounds 11–13 no longer receive advanced instruments that were already earned earlier in the run.
+- Restore remaining refresh counts before taking the protocol path, just as for potion and instrument choices.
+- Add regression coverage for protocol reconstruction, unchanged held instruments and final-score simulation without duplicate rewards.
+- Save protocol forecasts and their current score in latency diagnostics so reported forecast differences can be audited.
+
+This fixes a reproduced forecast inflation bug, not all model uncertainty. Tartarus's full-run rewrite remains under development and is not included.
+
 ## [0.2.2] - 2026-10-26
 
 ### Vorax recognition hotfix

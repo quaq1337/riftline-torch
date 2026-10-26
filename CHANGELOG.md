@@ -8,6 +8,19 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
+## [0.1.6] - 2026-10-26
+
+### Compact update notification
+- Replace the separate update window and release-notes panel with one small row inside the existing overlay: version, Update and Skip.
+- Keep the row accessible while the overlay is compact, without expanding the advice body or taking keyboard focus.
+- Show download percentage, verification and download failures in that same row. Progress does not move or resize the overlay; controls remain in place and are disabled during installation.
+- Preserve the verified download, restart, rollback and per-version Skip behavior. No download or installation begins until Update is clicked.
+
+### Validation and compatibility
+- Added native UI checks for no additional notification windows, compact RU/EN layout, stable progress geometry, skip persistence and inline retry after failure.
+- Existing v0.1.5 and earlier installations still use their original notification once when updating to this version. Later notifications use the inline row.
+- Recognition models, game rules, calculation quality and local user data are unchanged.
+
 ## [0.1.5] - 2026-10-26
 
 ### Automatic reading and startup

@@ -8,6 +8,17 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
+## [0.1.8] - 2026-10-26
+
+### Automatic update discovery
+- Check for updates about 5 seconds after startup and every 2 minutes instead of every 6 hours. Retry temporary network failures after 1 minute, without requiring a manual check.
+- Use the small latest-release manifest for recurring background checks, avoiding the shared anonymous REST quota. Request revalidation of latest metadata rather than relying on a stale cached response. Manual checks retain the release-feed path and its fallback.
+- Keep an already discovered update in the compact overlay. Background polling does not expand the advice body, take focus, download the application or install it.
+- Respect Skip even if an earlier request finishes afterward. Ignore late metadata replies during a chosen download so its version and progress cannot be replaced.
+- Cancel the polling timer on exit. Regression tests simulate new releases, offline recovery and timer-driven discovery without user actions or network access.
+
+The new polling schedule applies after installing this version. Older clients still need their existing manual check once to obtain it. Installation remains an explicit Update action. Vorax calculation quality and the v0.1.7 performance improvements are retained.
+
 ## [0.1.7] - 2026-10-26
 
 ### Vorax computation performance

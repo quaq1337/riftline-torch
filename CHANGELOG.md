@@ -8,6 +8,19 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
+## [0.1.7] - 2026-10-26
+
+### Vorax computation performance
+- Use a faster state-copy path in rollout branches while preserving the engine prototype, every own rule field and isolation of mutable state.
+- Reuse the immutable event-driven instrument set at round settlement instead of rebuilding it repeatedly. Event journals and cascade order remain intact.
+- Preserve game rules, model weights, complete action/target enumeration, reroll confidence checks, sample limits and search budgets.
+
+### Validation
+- Five alternating batches of 1,000 seeded episodes each produce exactly the same scores as v0.1.6; serial computation is about 30% faster in this local benchmark.
+- On three saved boards, a four-worker comparison with the bundled weights and exactly 256 samples per action produces identical full results. Median search times across three paired trials changed from 880 to 421 ms, 93 to 38 ms, and 388 to 171 ms.
+- These are offline search measurements, excluding capture, OCR and physical monitor presentation. Live end-to-end improvement still needs confirmation on new card decisions.
+- OCR thread-count and parallel-retry experiments did not improve the paired measurements and were not included. Recognition and display behavior remain unchanged.
+
 ## [0.1.6] - 2026-10-26
 
 ### Compact update notification

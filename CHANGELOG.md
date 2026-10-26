@@ -8,7 +8,24 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
-## [0.1.4] — 2026-10-25
+## [0.1.5] - 2026-10-26
+
+### Automatic reading and startup
+- Check for a Vorax heading, recognizable offer or final protocol counter before validating a board. World and menu frames no longer become missing-round/manual-entry warnings after repeated automatic scans.
+- Keep the overlay compact outside a confirmed preparation scene and resume screen recognition even when a readable historical log has no fresh events.
+- Accept confidently positioned split round-counter tokens and common OCR one-glyph variants. Retry failed counters in tighter and wider crops automatically; missing or conflicting numbers remain unknown rather than inheriting a saved round.
+
+### Log status
+- Distinguish finding an old log, observing new file writes, receiving mechanic events and losing fresh activity. Reading an existing file alone no longer displays "Log considered".
+- Do not use an unconfirmed historical lifecycle to open the overlay or disable screen fallback. Automatic log reading remains enabled; the application does not claim to enable logging inside the game client.
+- Include round-crop evidence and live-log connection state in local diagnostics.
+
+### Validation and distribution
+- Added startup-scene, historical-log, rotation, counter-splitting and ambiguity regression coverage.
+- Six previously readable saved Vorax frames retain identical boards; resampled 16:9 capture checks pass from 720p through 4K. Live behavior on a friend's PC still needs confirmation.
+- Offline EXE installer and compatible automatic-update assets are provided together. Models, calculation rules and search sample limits are unchanged.
+
+## [0.1.4] - 2026-10-25
 
 ### Overlay responsiveness
 - Request native repaint immediately after updating advice, and restore the overlay's topmost order without taking keyboard focus. Window movement no longer stands in for a presentation request.

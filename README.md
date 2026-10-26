@@ -41,6 +41,8 @@ Game-card recognition currently requires **English text**. Capture and highlight
 
 Writable folders are created under `%LOCALAPPDATA%/Vorax Lab`. The legacy name preserves settings, local models, recorded choices and run history across versions. Game-log discovery uses the running game and supported installation/Steam locations; a manual picker is available if discovery fails.
 
+Since v0.1.8, background checks start about 5 seconds after launch and repeat every two minutes, with a one-minute retry after network errors. A newly discovered version appears automatically in the compact overlay. Checks fetch only a small version manifest; the application is downloaded and installed only after you click Update.
+
 Choose **Update** when notified to download, verify, replace the portable files and restart. **Skip** hides that release; Settings has a manual update check. Settings and history stay in the per-user data folder. Keep the installation folder in place so the desktop shortcut remains valid. A previous app folder is retained for recovery.
 
 Screenshots, logs and gameplay calculations stay local. GitHub receives release/download requests; gameplay data is not uploaded automatically. Review any diagnostics before attaching them to a public issue.

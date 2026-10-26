@@ -8,6 +8,14 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
+## [0.2.1] - 2026-10-26
+
+### Live Tartarus fixes
+- Identify Vorax and Tartarus from positive current-screen headings and switch their capture/advice pipelines automatically, independently of game-log freshness or the last manually opened dashboard page. Preserve individual mechanic enablement and pause controls.
+- Recognize Long-Chained Shackles from its complete English name. The observed initial offer with Shackles, Searing Branding Iron and Barbed Whip no longer loses all guidance because one catalog entry was missing.
+- Record the Shackles' verified movement condition and keep it separate from consume modifiers. Retain explicit local-policy tradeoffs rather than claiming full-run optimality.
+- Reject a delayed routing result after a newer log transition. Start a fresh Vorax entry context when screen detection switches back from Tartarus.
+
 ## [0.2.0] - 2026-10-26
 
 ### Tartarus preview

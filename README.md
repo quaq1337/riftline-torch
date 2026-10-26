@@ -1,56 +1,89 @@
-# Riftline
+<p align="center"><img src="assets/riftline-icon.png" width="88" alt="Riftline emblem"></p>
+<h1 align="center">Riftline</h1>
+<p align="center">A local, read-only companion for Torchlight: Infinite.</p>
+<p align="center"><a href="https://github.com/quaq1337/riftline-torch/releases/latest">Download for Windows</a> · <a href="CHANGELOG.md">Changelog</a> · <a href="docs/GETTING_STARTED.md">Getting started</a> · <a href="https://github.com/quaq1337/riftline-torch/issues">Report an issue</a></p>
 
-A local Windows companion for Torchlight: Infinite, with Vorax recommendations and game overlays.
+![Riftline key art](assets/riftline-keyart.png)
 
-**[Download the latest Windows installer](https://github.com/quaq1337/riftline-torch/releases/latest)** · [Release history](https://github.com/quaq1337/riftline-torch/releases) · [Changelog](CHANGELOG.md) · [Report a problem](https://github.com/quaq1337/riftline-torch/issues)
+Riftline reads the English game screen and local game log, calculates Vorax choices on your computer, and highlights the recommended card and targets over the game. You make every game action yourself.
 
-This public repository distributes the application and release notes. Development sources and their history are maintained separately in a private repository.
+**Release 1 is v0.1.0.** Earlier 0.1–0.4 prototype numbers were private development builds; public versioning starts here. Future public releases use Semantic Versioning: patch fixes begin at 0.1.1. Every release includes English change notes.
 
-## Install
+## Features
 
-1. Download **`Riftline-<version>-Setup.exe`** from Releases.
-2. Run it to install the full application and create a desktop shortcut. No manual extraction is needed.
-3. Launch Riftline. The dashboard starts in the tray and the overlay appears.
-4. Start Torchlight: Infinite in English, preferably borderless windowed, and enter Vorax Surgical Preparation.
-5. Set your Intern Shelley tier on the main board if applicable, check the log indicator, and make the highlighted choices yourself.
+- **Vorax advice:** card and target search, score forecasts, special potion chains, supported starting equipment, Intern Shelley tier profiles, and reroll evaluation using the observed remaining budget.
+- **Automatic reading:** game-screen recognition assisted by log events. Manual board entry is a recovery option; unknown or inconsistent readings are surfaced.
+- **Visible highlights:** cyan card and reroll outlines, green targets, and recommendations that remain through target selection.
+- **Desktop integration:** tray startup, a compact overlay outside preparation, background capture pause, F8 refresh, and F9 pause.
+- **History:** confirmed Vorax final scores and log-derived Tartarus Chromatic counts, separate from forecasts and incomplete observations.
+- **Updates:** background checks and a compact Update / Skip row inside the overlay, SHA-256 verification, automatic restart and startup-failure rollback.
+- **English and Russian UI:** Windows-region default and a manual language setting. Recognition currently requires English game text.
 
-No separate Python or Node.js installation is required. Windows x64 is supported. The offline installer needs no administrator rights and installs under `%LOCALAPPDATA%/Programs/Riftline` by default. It includes every original application file and OCR model, with lossless compression; recognition and calculation quality are unchanged. The app reads the screen and local game log; it does not click game controls.
+| Mechanic | Available | In development |
+| --- | --- | --- |
+| Vorax | OCR, log tracking, recommendations, highlights, history | Recognition coverage and end-to-end latency improvements |
+| Tartarus (preview) | Board recognition, local route/consume/instrument/treasure guidance, highlights, logs and history | Complete effects, full-run reward optimization and wider live validation |
 
-## Features and current scope
+**Tartarus is a preview, not a full-run optimal-play advisor.** Approximate local guidance is marked `~`. Strict chain forecasts remain gated by verified effects. Unknown or unsupported states may have no highlight. Forecasts estimate outcomes using the implemented simulator; maximum scores and complete coverage of future game patches cannot be guaranteed.
 
-- Vorax card/target recommendations, score forecasts, special potion chains, supported starting equipment and reroll-budget checks.
-- Automatic screen reading assisted by game-log events, with direct refresh and manual correction for recognition failures.
-- High-contrast card, target and reroll highlights; a compact overlay outside preparation.
-- English/Russian interface, Windows-region default, pet tier selection and local run history.
-- A compact update row inside the overlay with **Update / Skip**, inline download progress, verified files, restart and startup-failure rollback.
-- Tartarus log-based archive statistics. The full Tartarus advisor is still in development.
+## Install and play
 
-Game-card recognition currently requires **English text**. Capture and highlight coordinates follow the game window. Resampled 16:9 captures from 720p through 4K were checked; unusual aspect ratios, UI scales and covered controls need additional validation. Forecasts are estimates and do not guarantee a maximum score.
+1. Download `Riftline-<version>-Setup.exe` from [Releases](https://github.com/quaq1337/riftline-torch/releases).
+2. Run the installer. It installs the full application for your Windows account and creates a desktop shortcut. No manual extraction is needed.
+3. Launch Riftline. The dashboard starts in the tray and the overlay appears. Open the board from the tray or overlay.
+4. Run Torchlight: Infinite in English, preferably borderless windowed. Enter Vorax Surgical Preparation; reading starts automatically.
+5. For Tartarus, fresh log events select the module automatically. If game logs are disabled or stale, open the dashboard → Tartarus → **Enable Tartarus reading**, then press F8. Choose **Return to Vorax** when needed.
+6. Set your Intern Shelley tier on the main board if applicable. Check the log indicator, then make the highlighted choices yourself.
 
-## Controls
+No separate Python or Node.js installation is needed. Windows x64 is supported. The installer needs no administrator privileges and uses `%LOCALAPPDATA%/Programs/Riftline` by default. All OCR models and calculation files are included unchanged, with lossless compression. The portable ZIP remains available for portable use and existing automatic updaters.
 
 | Control | Action |
 | --- | --- |
-| F8 / Refresh | Capture and read the game |
-| Picture | Send a fresh game capture directly into recognition |
-| F9 | Pause/resume automatic reading |
-| Close dashboard | Keep the app running in the tray |
+| F8 / Refresh | Capture and read the current game screen |
+| Picture | Capture the game directly into recognition |
+| F9 | Pause or resume automatic reading |
+| Close dashboard | Keep Riftline running in the tray |
 | Tray → Exit | Fully close Riftline |
 
-## Storage and updates
+Capture follows the game window and DPI. Resampled real captures were checked at 720p, 900p, 1080p, 1440p and 4K in 16:9; this does not replace live testing on each device. Other aspect ratios, unusual UI scales and overlays covering controls may require correction.
 
-Writable folders are created under `%LOCALAPPDATA%/Vorax Lab`. The legacy name preserves settings, local models, recorded choices and run history across versions. Game-log discovery uses the running game and supported installation/Steam locations; a manual picker is available if discovery fails.
+## Data, logs and updates
 
-Since v0.1.8, background checks start about 5 seconds after launch and repeat every two minutes, with a one-minute retry after network errors. A newly discovered version appears automatically in the compact overlay. Checks fetch only a small version manifest; the application is downloaded and installed only after you click Update.
+Writable folders are created automatically under `%LOCALAPPDATA%/Vorax Lab`. The legacy folder name preserves settings and history from private builds. All portable releases use the same per-user folder.
 
-Choose **Update** when notified to download, verify, replace the portable files and restart. **Skip** hides that release; Settings has a manual update check. Settings and history stay in the per-user data folder. Keep the installation folder in place so the desktop shortcut remains valid. A previous app folder is retained for recovery.
+```text
+Vorax Lab/
+  settings.json       Language, pet, overlay and mechanic preferences
+  runs.sqlite3        Local run history
+  records/vorax/      Confirmed recorded Vorax choices
+  records/tartarus/   Distinct recognized Tartarus decisions and diagnostics
+  updates/            Downloads and update status
+```
 
-Screenshots, logs and gameplay calculations stay local. GitHub receives release/download requests; gameplay data is not uploaded automatically. Review any diagnostics before attaching them to a public issue.
+`UE_game.log` is discovered from the running game, configured Steam libraries and supported installation locations. No developer-specific path is bundled. The manual picker is a fallback; log reading is enabled by default and can be disabled explicitly.
 
-Each release includes English change notes and an offline **Setup.exe installer** with its SHA-256 checksum. The compatibility ZIP, `riftline-update.json` and `SHA256SUMS` are retained for portable use and existing automatic updaters; first-time users should choose Setup.exe. GitHub's automatically generated source-code archives contain only this distribution repository's documents.
+Background release checks begin about five seconds after startup and repeat every two minutes, with a one-minute retry after network errors. They read a small latest-version manifest; no application download starts until **Update** is clicked. A discovered release stays in the compact overlay. **Update** verifies the archive, closes the app, replaces its folder and restarts. **Skip** hides that version; newer releases can notify again. A manual check in Settings can show a skipped release. If startup fails, the helper restores the previous application. [Update design and recovery](docs/UPDATES.md).
 
-## Support and notices
+Screenshots, logs, history and calculations remain local. The updater contacts GitHub for release metadata and downloads, without uploading gameplay data. [Privacy and storage](docs/PRIVACY.md).
 
-Include the Riftline version, Windows/game versions, English game language, resolution, scaling and reproduction steps in an issue. Redact account names, chat and personal paths.
+## Development
 
-Riftline is an independent project, unaffiliated with the game's developers or publishers. The distribution includes required notices and licenses, including the MIT-licensed Moebing Vorax simulator and other third-party components. Game names and artwork retain their respective owners' rights.
+Use Windows x64, Python 3.12 and Node.js 24. From the repository root:
+
+```powershell
+python -m pip install -r requirements.txt
+python app.py --demo
+python -m unittest discover -s tests -p "test_*.py"
+node --test --test-isolation=none tests/*.test.mjs
+python build.py
+python tools/package_release.py
+python tools/build_installer.py
+```
+
+Private capture tests skip when their fixtures are absent. Public tests cover rules, state tracking, update validation and rollback. See [Development](docs/DEVELOPMENT.md), [Training](docs/TRAINING.md), [Roadmap](docs/ROADMAP.md) and [Contributing](CONTRIBUTING.md).
+
+## Credits and license
+
+The Vorax simulator builds on the MIT-licensed [Moebing simulator](https://github.com/Moebing/Torchlight-Infinite-SS11-Vorax-simulator). Public simulators and [TLI Overlay Plus](https://github.com/Giboork/tli-overlay-plus) informed interoperability research; their proprietary applications are not redistributed.
+
+Project-authored code uses the [MIT License](LICENSE). Third-party software and game-derived names, portraits and recognition crops retain their respective rights; see [Third-party notices](THIRD_PARTY_NOTICES.md). Riftline is independent and is not affiliated with or endorsed by the game's developers or publishers.

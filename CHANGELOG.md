@@ -8,6 +8,18 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
+## [0.3.6] - 2026-10-27
+
+### First board on a new PC and mandatory End
+- Recognize the supported first-day Office patrol directly from the current screen, without requiring another computer's saved instrument-selection history or a previously recorded game Start.
+- Require the complete visible board, an independently matched single held tool and empty next slot, ten positively empty containment slots, a full zero-progress objective, all current destinations, and a positively empty Rumor panel. Unknown effects or incomplete observations remain blockers. This entry path currently covers the standard 20-day run before its first destination choice.
+- Start input continuity at an explicit screen checkpoint. Keep the historical Start flag false and earlier history unknown; preserve this distinction through later action, event and reward transactions.
+- Verify a sole End button using both current control OCR and the independent screen scanner. Highlight it without ranking future alternatives at any or unknown containment count. Ten filled slots are an optional observation, not the eligibility rule. No score prediction or effect coverage is fabricated for this forced control.
+- Reuse unchanged strategy calculations across UI-caption/provenance-only changes; keep all operational state, tools, pending choices and scenario parameters in cache validation.
+- Apply the bounded independent destination-label retry to later patrols as well as the first board.
+
+Tartarus remains a preview. Clean-data replay and offline continuation tests are not a complete live-run acceptance. Entry with unread/unsupported Rumors, a different initial duration or an arbitrary partially played board is not certified by this first-patrol path. Vorax remains isolated.
+
 ## [0.3.5] - 2026-10-27
 
 ### Tartarus first patrol and response latency

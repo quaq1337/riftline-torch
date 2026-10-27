@@ -8,6 +8,19 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
+## [0.3.5] - 2026-10-27
+
+### Tartarus first patrol and response latency
+- Buffer simulator JSON replies instead of reading every byte separately. Read bounded rotated-log snapshots in one pass. The same saved initial offer replay decreased from 5.70 to 1.46 seconds with identical samples and all 24 scenario estimates; live on-screen latency still depends on capture, recognition and presentation.
+- Handle the actual first-day popup overlap: New Day opens, the initial tool popup closes, then New Day closes. Require the complete positively logged transition before accepting the patrol.
+- Bind the initial empty loadout before an immediate first-frame Select/Confirm, so the acquired tool is retained without requiring another unselected refresh.
+- Recognize empty containment silhouettes using common outline gradients from the original templates, bounded alignment and an occupied-face veto. Preserve confidence thresholds and unknown occluded slots.
+- Retry a weak patrol destination label in its independent source-local crop; never override a positively conflicting numeral.
+- Revalidate a retained, unchanged first patrol after an application restart using the original accepted tool journal, matching reopening, all current cells, Office position, first-day counter, zero objective, ten positively empty containment slots and independently matched held-tool icon. Keep prior discontinuities and original sequence ordering; later actions, acquisitions, unknown buffs and contradictory or unread state block recovery.
+- Keep matching immutable frames for future recorded Tartarus transitions and record capture, recognition, solver and presentation timings for diagnosis.
+
+Tartarus remains a preview. Recorded entry and first-patrol recovery plus offline lifecycle tests do not establish a complete live run or guarantee a Rainbow result. Vorax behavior remains isolated.
+
 ## [0.3.4] - 2026-10-27
 
 ### Tartarus input and first-offer recovery

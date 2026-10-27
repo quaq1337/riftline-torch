@@ -8,6 +8,17 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
+## [0.3.4] - 2026-10-27
+
+### Tartarus input and first-offer recovery
+- Do not treat clicks on Riftline's non-activating overlay controls as Tartarus gameplay. Read the window under the pointer; preserve game clicks through the transparent highlight layer.
+- Retain pointer target and normalized click position in Tartarus input diagnostics.
+- Recover the unchanged, uncommitted reopened first offer after unclassified clicks or a background gap only when the original live witness, exact old and current log lifecycle, three current unselected cards, gray Confirm, zero objective progress and unchanged zero refresh counter all agree.
+- Preserve the earlier unresolved input history separately with checkpoint provenance. Never erase a committed tool, a typed Select/Confirm, a played-board checkpoint, unknown effects, changed cards or a changed resource counter to obtain a recommendation.
+- Leave the released Vorax engine, recognition and input behavior unchanged.
+
+Tartarus remains a preview. Verification includes the actual saved failing frame and its recorded unclassified clicks/focus gaps, not a complete live-run acceptance or a guaranteed Rainbow result.
+
 ## [0.3.3] - 2026-10-27
 
 ### Reopened first instrument selection

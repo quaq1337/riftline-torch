@@ -7,6 +7,18 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 ### Planned
 - Complete independent full-run acceptance and extend Tartarus effect recognition.
 
+## [0.3.10] - 2026-10-27
+
+### Tartarus recognition and continuation hotfix
+- Add the MIT-licensed TartarusSolver batch cell and sidebar models, with verified model hashes, bounded CPU threads and strong probability/margin gates. Use the measured current board pose; retain existing adaptive recognition where the model layout is not qualified.
+- Reject positive recognition conflicts and covered slots. Untrained mark outputs do not certify absent effects, and two visible instrument slots never erase a larger acquired inventory.
+- Keep a stable choice identity across weak repeat frames. Bind the next click to the last accepted current observation rather than an incomplete OCR retry. Ignore a qualified click on the empty footer below the actual controls.
+- Preserve the manual Tartarus panel fold until explicitly expanded or a new run begins. A failed read no longer proves that the mechanic was exited.
+- Save one bounded current-state checkpoint without screenshots. On restart, revalidate the same run epoch, current cells, day, vault, visible held-tool prefix, objective and controls before retaining accepted hidden state. A different run or unobserved intervening transition blocks stale recovery.
+- Keep bounded, atomically paired diagnostic images and metadata, including failed recognition. Retain one initial starting-rule observation separately from the rotating diagnostic cache.
+
+Offline acceptance covers the actual 14-frame recorded opening/continuation sequence, one target at a time, and a separate day-2 restart. This is not a complete independent live-run acceptance. Starting for the first time on an arbitrary late board without a complete observed state is still unsupported; this hotfix must not be presented as universal mid-run reconstruction. Measured saved-image processing is not a live capture-to-display latency guarantee. Solver samples and the remaining-run horizon are unchanged. Vorax's frozen behavior baseline is unchanged.
+
 ## [0.3.9] - 2026-10-27
 
 ### Initial instrument recognition and capture isolation

@@ -8,6 +8,18 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
+## [0.3.7] - 2026-10-27
+
+### Initial tool-to-board handoff and response latency
+- Recover a fully corroborated first Office patrol after a rapid initial Select and Confirm, including a missing intermediate selected-card frame. Archive the original modal inputs; create a current observation checkpoint rather than an invented acquisition receipt. Keep known starting rules and their provenance, including the 30-day Iron Law duration.
+- Accept already-open initial destinations. Cross-check held instruments using the existing positive local classifier or an independent strong source match, while rejecting positive conflicts and extra tools. Incomplete containment or unknown effects remain explicit blockers.
+- Retain reconciled current board facts before simulation and expose their actual alternatives to input tracking while calculation is in progress. Cancelling a forecast no longer discards its already confirmed board parent. Clear the previous run's coordinator before handling a new run.
+- Enable the pinned scanner's existing current-pixel location revalidation cache. A saved 1920x1080 board repeated scan decreased from about 980 ms to 220 ms in the local check. Remove the additional 650 ms wait between foreground Tartarus reads; retain all simulation samples and sensitivity scenarios.
+- Revalidate background-only interruptions on an unchanged initial offer or ordinary board, preserving the gap audit. Exact unchanged pixels also cover retained modal/selector observations. Changed UI, unknown inputs, pending unconfirmed actions, incomplete effects or failed revalidation do not silently resume.
+- Add a standalone offline sequence diagnostic for initial offer, rapid confirmation, first board and unchanged refresh. These tests use original saved pixels with explicitly labelled UI timeline fixtures and no prior user records.
+
+Tartarus remains a preview. This hotfix does not certify every live session, arbitrary mid-run recovery or a guaranteed Chromatic result. Vorax behavior remains isolated and its baseline is unchanged.
+
 ## [0.3.6] - 2026-10-27
 
 ### First board on a new PC and mandatory End

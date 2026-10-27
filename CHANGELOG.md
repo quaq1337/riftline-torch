@@ -8,26 +8,42 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
-## [0.2.3] - 2026-10-26
+## [0.3.2] - 2026-10-27
 
-### Vorax forecast correction
-- Preserve claimed 8,000/28,000 reward flags when reconstructing protocol-round state. Forecasts for rounds 11–13 no longer receive advanced instruments that were already earned earlier in the run.
-- Restore remaining refresh counts before taking the protocol path, just as for potion and instrument choices.
-- Add regression coverage for protocol reconstruction, unchanged held instruments and final-score simulation without duplicate rewards.
-- Save protocol forecasts and their current score in latency diagnostics so reported forecast differences can be audited.
+### Tartarus entry, Guillotine sensitivity and pet resources
+- Treat a mouse input in the positively logged initial Task popup as modal input even when the player confirms before the first OCR frame. It no longer becomes an unknown gameplay action that permanently blocks the initial instrument evaluation.
+- Preserve the input journal in early gap diagnostics, including the exact blocking input. Unknown gameplay, unreviewed starting effects and later-run gaps remain fenced.
+- Restore an uncommitted first offer after restarting only when its saved live input witness, exact UI timeline, cards, current resources and same-boot clock correlation agree. Recovered logs alone cannot restore an arbitrary played board.
+- Keep Fanged Guillotine in current and future choices. Evaluate its unresolved Oppress behavior under 24 explicit sensitivity hypotheses, including upgrade probability, trigger scope, bonus gating and Code changes on failure. Choose the action with the strongest minimum tested-scenario mean and show the scenario range. These are model estimates, not measured game probabilities, exhaustive bounds or guaranteed results.
+- Reuse completed trials only when no potentially affected Guillotine bite occurred. This preserves the existing rollout budget while avoiding repeated work across unaffected scenarios.
+- Accept a positively observed consumed meal with zero Wolf growth under the explicit Oppress capability. Keep unrelated cell changes, missing effects and invalid action histories blocked.
+- Add an independent Twin Inquisitors tier selector to the Tartarus dashboard. Respect the actual current refresh counter, preserve the shared pool through subsequent tool offers and treasures, debit each refresh once and never invent repeated future pet grants.
+- Record literal UI event timestamps and retain the original recording identity as provenance during narrowly verified first-offer recovery. Vorax logic and its frozen isolation baseline remain unchanged.
 
-This fixes a reproduced forecast inflation bug, not all model uncertainty. Tartarus's full-run rewrite remains under development and is not included.
+Tartarus remains a preview. The saved original first-offer failure is covered with the production 8-world × 8-seed budget and one primary highlight. A complete live run has not passed acceptance; complex unread states still require positive evidence. Oppress scenario ranges do not guarantee a Rainbow total. User settings and history are retained.
 
-## [0.2.2] - 2026-10-26
+## [0.3.1] - 2026-10-26
 
-### Vorax recognition hotfix
-- Recover the shifted five-card fan after Potion Kit (Large) using three independently recognized title anchors.
-- Read each recovered card slot separately so adjacent Pure Leech Solution and Hollow Spinal Solution titles cannot merge or fill the same slot twice.
-- Keep round, total activity, card-name confidence and complete-offer validation intact. No guessed card or missing effect is accepted to bypass a recognition failure.
-- Validate the reported round-five frame with all five cards recognized and no manual corrections.
-- Prefer the running game's own log over a newer log from another installation.
+### Mechanic switching and Rainbow display hotfix
+- Check the active mechanic independently of the shared strategy queue every 250 ms while the game is foreground. Keep checking after a recognized Tartarus frame, so returning to Vorax no longer waits for the Tartarus reader to fail.
+- Reuse high-confidence heading templates before requesting OCR. Cache unchanged positive heading pixels, throttle OCR fallback and skip it while the shared reader is occupied instead of queuing behind it.
+- Switch the overlay's module header immediately after positive recognition and invalidate advice from the previous mechanic.
+- Show collected Chromatic prisoners in a compact label, with the estimated final total in the main metric. Add the same forecast to the Tartarus dashboard. Reject forecasts for another choice or an older confirmed containment count; display a dash when no valid estimate is available.
 
-Tartarus remains an experimental preview. The ongoing full-run strategy and effect-integration rewrite is not included in this Vorax-only hotfix.
+This is a prerelease and includes the Tartarus integration described below. Remaining limitations still apply; these changes do not establish complete live-run acceptance or guarantee a particular Rainbow total.
+
+## [0.3.0] - 2026-10-26
+
+### Tartarus integration preview
+- Replace local move ranking with the pinned simulator's remaining-run evaluation for confirmed supported states. Show one primary action and an estimated final total of Chromatic prisoners.
+- Retain all confirmed instruments, objectives, starting buffs and consecutive reward queues. Reconcile supported Consume and Bestow rewards with the current board, including Opulence and later instrument choices.
+- Preserve card selection and confirmation through refreshed frames. Deduplicate input transactions and distinguish treasure inspection from actual acquisition.
+- Read the current board behind Warden's Treasure and return through positively identified view controls. Read-only navigation is bounded; it never chooses an instrument or confirms a gameplay action.
+- Separate Tartarus jobs from Vorax work and avoid redundant route recognition while Tartarus is positively recognized.
+- Obtain the five exact, hash-verified simulator resources directly from the original pinned repository when first needed, then retain them in per-user storage. The application payload does not redistribute the research checkout. An internet connection is required for the first component download.
+- Keep the released Vorax 0.2.3 implementation unchanged.
+
+This is a prerelease for integration testing, not a complete Tartarus advisor. A whole live run has not passed acceptance. Unknown effects and incomplete observations block advice rather than inventing a state. Fanged Guillotine/Oppress, some marked/timed states and complex Horn/Cage/Revenge transitions remain unsupported. Read-only navigation has not been verified against the live game's posted-input handling. Do not use this preview as the sole basis for a valuable run.
 
 ## [0.2.1] - 2026-10-26
 

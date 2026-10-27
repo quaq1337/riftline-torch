@@ -19,6 +19,10 @@ Windows x64 and English game text are supported. Use borderless windowed mode. R
 
 Tartarus is still being validated on independent PCs and complete live runs. Unknown effects or unread state can block advice. Forecasts are estimates under the implemented simulator, not guaranteed rewards or exact optimal play. An unread effect is not silently treated as absent.
 
+## Version 0.3.9
+
+Initial instrument hotfix: separate Tartarus capture from Riftline windows, repair current instrument/title and visible reroll reading, recognize the Doors objective counter, and retain the configured pet profile on screen-based entry. A fully re-read initial choice can recover pre-observation clicks without inventing an acquisition. Tartarus remains a preview; a complete independent live run has not been accepted.
+
 ## Version 0.3.8
 
 - Faster complete Tartarus forecasts using bounded parallel work with the original samples and scenario aggregation retained.

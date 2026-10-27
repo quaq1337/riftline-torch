@@ -8,6 +8,17 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 - Complete and validate Tartarus board recognition and decision support.
 - Improve live end-to-end Vorax latency and recognition coverage.
 
+## [0.3.3] - 2026-10-27
+
+### Reopened first instrument selection
+- Recognize the game's shipping-log `Page@ OpenView` lifecycle when detailed UI recording is disabled. A reopened board and tool popup are distinct from a newly observed Start button.
+- Reconnect an unchanged, uncommitted first tool selection after restarting the game, using the application's original live input witness, the rotated game's exact initial/teardown history, the current Main-to-Relic reopening, matching three card identities, a positively read zero-progress objective and the unchanged refresh counter.
+- Keep the recovered start proof separate from current log facts. Do not turn recovered logs into a newly observed start or use wall-clock drift to correlate old mouse input.
+- Preserve the confirmed initial tool through its typed selection/Confirm and current shipping-log closure. Unknown buffs, gameplay gaps and contradictory cards remain blocked.
+- Include the actual lifecycle evidence in unavailable-choice diagnostics and remove stale failure text after a successful calculation.
+
+Tartarus remains a preview. This recovery is limited to the uncommitted first offer with a retained original live witness; it does not reconstruct an arbitrary partially played run or guarantee a Rainbow result.
+
 ## [0.3.2] - 2026-10-27
 
 ### Tartarus entry, Guillotine sensitivity and pet resources

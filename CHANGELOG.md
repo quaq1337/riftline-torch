@@ -7,6 +7,18 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 ### Planned
 - Complete independent full-run acceptance and extend Tartarus effect recognition.
 
+## [0.3.9] - 2026-10-27
+
+### Initial instrument recognition and capture isolation
+- Isolate Tartarus client rendering from capture-visible Riftline windows. Use one bounded native rendering worker and retain a scoped desktop fallback that restores the existing public capture preference.
+- Recognize a current source-matched instrument with an exact visible title remainder only under independent icon/title geometry and unchanged confidence/conflict gates. Preserve occluded text as unknown rather than inventing it.
+- Read the positive remaining-attempts label above the reroll button when the normal footer crop cuts it off. Preserve observed uses independently of the configured pet tier.
+- Parse the native Doors objective's merged fixed requirement and explicit trailing progress; a missing count remains unknown.
+- Permit a fully re-read, unselected initial choice to supersede pre-observation input only with complete current facts, a positively disabled gray Confirm and an audit of the original unresolved inputs. Do not fabricate their meaning or an acquisition.
+- Bind the pet profile on current-screen initial entry and avoid freezing its configuration before a run boundary exists.
+
+Tartarus remains a preview. Contract tests and saved-image checks passed; client rendering on the user's game and a whole independent live run have not been accepted. Unsupported window renderers use the existing desktop path with our own capture exclusion applied during that read and then restored. This may briefly omit the HUD from external recording during fallback reads. Vorax capture and its frozen behavior baseline are unchanged.
+
 ## [0.3.8] - 2026-10-27
 
 ### Tartarus recognition, complete forecast performance, capture and package size

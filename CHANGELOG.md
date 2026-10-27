@@ -5,8 +5,20 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 ## [Unreleased]
 
 ### Planned
-- Complete and validate Tartarus board recognition and decision support.
-- Improve live end-to-end Vorax latency and recognition coverage.
+- Complete independent full-run acceptance and extend Tartarus effect recognition.
+
+## [0.3.8] - 2026-10-27
+
+### Tartarus recognition, complete forecast performance, capture and package size
+- Combine the smaller Windows package and capture-visible overlay with the Tartarus recognition and transaction fixes below. Preserve user settings and history.
+- Restore the original held-instrument icon references in the board adapter. Retain all acquired tools when their icons are hidden or occluded. Use bounded existing-art alignment without lowering recognition thresholds or removing competing instruments.
+- Correlate a fully read offered card, its recorded selection, the game's Confirm log event and actual popup closure. Rapid confirmation no longer requires an intermediate selected-card screenshot. Later rewards still require independently reconciled effects and queue changes before acknowledgement.
+- Run independent current-pixel scanning alongside OCR. Prepare static Tartarus dependencies at its actual entry, and reuse unchanged recognition and strategy work.
+- Partition complete seeded forecast samples across a bounded worker pool. Keep the original rollout budgets, full remaining-run horizon, all sensitivity scenarios, exact sample ordering and final aggregation. Worker failure falls back to the complete serial calculation.
+- Allow the panel and highlights in supported desktop capture paths by default. OBS Display Capture and Discord entire-screen sharing can include separate overlay windows; game-window-only capture does not include them.
+- Omit unused optional video and standalone C API libraries while retaining the OCR bindings, models and active native dependencies. Keep diagnostic recordings bounded and remove obsolete updater helpers.
+
+Tartarus remains a preview and has not passed a complete live run on a second PC. Unknown effects or unread state remain explicit blockers; a passing component suite is not a guarantee of sub-second visible advice or a particular Chromatic result. Vorax's frozen behavior baseline remains unchanged.
 
 ## [0.3.7] - 2026-10-27
 

@@ -7,6 +7,18 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 ### Planned
 - Complete independent full-run acceptance and extend Tartarus effect recognition.
 
+## [0.4.0] - 2026-10-28
+
+### Native Tartarus adviser and faster highlights
+- Read the current instrument offer or board without requiring a game-start log or a complete history of earlier clicks. Bundle the MIT-licensed TartarusSolver scanner, rules, pretrained models and adviser in a self-contained native component; no extra runtime or first-use download is required.
+- Measure the current card and board layout instead of assuming one fixed desktop position. Reuse qualified text only within its original frame and geometry, and read current reroll counts after window changes or recovery.
+- Run optimized calculation code from the first warmed decision. Preserve the rules, neural models, simulation budgets and recognition thresholds. Reuse already-read current titles, captions and objective text instead of repeating OCR.
+- Distinguish Hunt targets from Sewer Ratway despite their shared caption. Show one current target, retain a positively confirmed Hunt owner and age its effect by turns rather than repeat reads. Keep reward-board inspection, consecutive rewards and cancel/recovery paths.
+- Cancel obsolete recognition between inference calls, shorten Tartarus input/publication scheduling and move diagnostic-file writes off the painting thread. Retain user settings, history and the existing Vorax implementation.
+- Disable automatic Tartarus screenshot recording by default. Recognition continues in memory; explicit diagnostic recording remains optional.
+
+Tartarus forecasts are simulator estimates, not guaranteed outcomes or exact optima. Saved-image and offline sequence checks do not constitute a complete independent live-run acceptance, and cold model startup is measured separately from warmed choice latency. Cropped, occluded or unknown data remains explicit rather than being filled with invented observations.
+
 ## [0.3.10] - 2026-10-27
 
 ### Tartarus recognition and continuation hotfix

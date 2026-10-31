@@ -7,6 +7,16 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 ### Planned
 - Complete independent full-run acceptance and extend Tartarus effect recognition.
 
+## [0.4.2] - 2026-10-31
+
+### Tartarus crowded Consume selector recovery
+- Recover a moved/scaled red Consume screen from its exact current caption and the existing structural template. Keep the source confidence threshold, current warden check and unread-cell protections; do not infer geometry from the number of highlighted targets.
+- Reuse the qualified pose on repeated reads instead of retrying unrelated instrument-title OCR on every selector frame.
+- Preserve the last accepted run day and known tools when the Consume screen hides those panels. An unread fixed sidebar crop does not imply an extra unknown instrument, and a hidden day does not mean zero days remain. A cold selector without an observed inventory remains explicit rather than inventing a run.
+- Verify the reported crowded selector, resized copies, caption occlusion, blank-frame recovery and a single stable highlight using explicitly separate fixture history. These offline checks are not a recorded full run or evidence for a specific choice in the reported run.
+
+Vorax recognition, rules, search, model weights and overlay code are unchanged from 0.4.1.
+
 ## [0.4.1] - 2026-10-31
 
 ### Vorax state recovery and faster recognition

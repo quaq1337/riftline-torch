@@ -7,6 +7,20 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 ### Planned
 - Complete independent full-run acceptance and extend Tartarus effect recognition.
 
+## [0.4.1] - 2026-10-31
+
+### Vorax state recovery and faster recognition
+- Read wrapped card titles as a whole before considering individual lines. In particular, do not confuse Targeted Xeno-Hormone with the different Xeno-Hormone card printed on its second line.
+- Recover complete five-card potion offers from current outer-title evidence even when a box-opening click was not tracked. Change the hand only after the wide read validates every title and its layout.
+- Preserve confirmed 8,000/28,000 reward history when the editor transfers a recognized board to the planner. Recover a missed instrument selection only from a newly recognized equipped icon matching the previous offer and observed acquisition round.
+- Cache legal rollout action enumeration without caching forecasts or random outcomes. Keep all card choices, target pairs, random streams, simulation budgets and active model weights unchanged.
+- Warm both OCR recognizers during background startup, reuse current text-comparison rankings, recognize the protocol heading and skip irrelevant card-title/reroll OCR on protocol screens.
+- Keep the original narrow number retries before a larger evidence crop; retain arithmetic validation against the independently printed tank and board totals.
+- Move Vorax diagnostic writes off the result path, disable automatic diagnostic screenshots by default and shorten result queue polling. Settings and run history retain their existing per-user location.
+- Extend English catalogue recognition and saved-image checks. Generated title panels test the full catalogue but do not constitute live-game coverage of every card, UI scale or language. Unread or conflicting evidence remains explicit.
+
+This update does not activate experimental training weights or claim a measured increase in live-game points. Tartarus rules and the native adviser component are unchanged.
+
 ## [0.4.0] - 2026-10-28
 
 ### Native Tartarus adviser and faster highlights

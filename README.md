@@ -63,3 +63,7 @@ This is a distribution repository containing documentation and release downloads
 Vorax builds on the MIT-licensed [Moebing simulator](https://github.com/Moebing/Torchlight-Infinite-SS11-Vorax-simulator). Tartarus uses pinned resources from the original [Tartarus simulator](https://github.com/blahdot3h/tartarus-simulator). [TLI Overlay Plus](https://github.com/Giboork/tli-overlay-plus) informed interoperability research; its proprietary application is not redistributed.
 
 Riftline is independent and is not affiliated with or endorsed by the game's developers or publishers. Game-derived names and artwork retain their respective rights.
+
+## Update checks failing in an older build?
+
+Download and run the latest `Riftline-<version>-Setup.exe` from [Releases](https://github.com/quaq1337/riftline-torch/releases/latest) once. Version 0.4.4 fixes a missing bundled TLS resource that prevented some older builds from checking for updates. Your settings and history remain in the existing user data folder. No system certificate installation or disabled HTTPS checks are required.

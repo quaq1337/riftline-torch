@@ -20,6 +20,12 @@ Windows x64 and English game text are supported. Use borderless windowed mode. R
 
 Tartarus is still being validated on independent PCs and complete live runs. Unknown effects or unread state can block advice. Forecasts are estimates under the implemented simulator, not guaranteed rewards or exact optimal play. An unread effect is not silently treated as absent.
 
+## Version 0.5.1 — Vorax model and cache fixes
+
+Cache advice by the exact model path and content, including model replacement during an in-flight request. Read Tk risk settings before the background calculation. Saved decisions now record the actual model hash, validation/fallback reason and app/service identity. Invalid or incomplete models are diagnosed without activating research weights.
+
+This is a loading/cache/diagnostic fix, not a validated score improvement or a new strategy. Existing model files, selection ranking, sampling, Loot & Profit and Tartarus are unchanged from 0.5.0. Settings and history are preserved.
+
 ## Version 0.5.0 — Loot & Profit
 
 Open **Loot & Profit** in the dashboard sidebar for automatic log-based loot, expense, estimated FE/hour, observed inventory value and map/session history. Tracking starts when the game writes the discovered log. Open your inventory once after first attachment to synchronize observed contents. Partial maps and items without prices are labelled; they are not assumed complete.

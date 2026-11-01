@@ -7,6 +7,23 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 ### Planned
 - Complete independent full-run acceptance and extend Tartarus effect recognition.
 
+## [0.5.1] - 2026-11-01
+
+### Vorax model loading and cache fixes
+- Record the exact requested/loaded model path, byte hash, effective-weight hash,
+  validation/fallback reason and app/service identity with each saved decision.
+- Key cached advice by model path and content, and prevent a dispatch-time model
+  from receiving advice computed with a replacement file's weights.
+- Read Tk risk settings before dispatch rather than from the analysis thread.
+- Diagnose missing, invalid, incomplete and incompatible model files explicitly;
+  retain the default-model fallback without activating diagnostic/research weights.
+
+Existing model files, sampling and ranking are preserved. These fixes are not
+a validated score improvement or an activated experimental policy. The source
+of the previously reported third weight vector remains under investigation.
+Loot & Profit and Tartarus remain unchanged from 0.5.0. Settings and history
+stay in the existing per-user data directory.
+
 ## [0.5.0] - 2026-11-01
 
 ### New: Loot & Profit

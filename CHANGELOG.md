@@ -7,6 +7,16 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 ### Planned
 - Complete independent full-run acceptance and extend Tartarus effect recognition.
 
+## [0.4.3] - 2026-11-01
+
+### Vorax inactive-potion safeguards
+- Check exact current species/effect requirements before preferring an inactive potion. Creation, mutation and meaningful future-chain effects remain available without their resulting species already on the board.
+- When a currently inactive potion ranks first, prefer a useful alternative with positive immediate gain, zero sampled loss and no recorded valuable destruction unless the inactive action has a positive paired forecast advantage bound. Keep all legal actions, destructive-choice fallback, clearly better passes and real rerolls available. This is an uncertainty-aware safeguard, not a proof of optimal play.
+- Recalculate this evidence after merging all search workers. Preserve game effects, probabilities, random samples, search budgets, rollout policy and model files.
+- Save the exact calculation input, effective weights and selected options in the existing bounded local decision journal after presentation. This creates no screenshot stream and makes future reports reproducible.
+
+This update does not claim a measured increase in live-game points or a guaranteed million-point run. No new training candidate is activated. Tartarus is unchanged from 0.4.2.
+
 ## [0.4.2] - 2026-10-31
 
 ### Tartarus crowded Consume selector recovery

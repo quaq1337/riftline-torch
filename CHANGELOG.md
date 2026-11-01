@@ -7,6 +7,29 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 ### Planned
 - Complete independent full-run acceptance and extend Tartarus effect recognition.
 
+## [0.5.0] - 2026-11-01
+
+### New: Loot & Profit
+- Add an independent, automatic log-based loot/expense tracker with a dashboard,
+  FE/hour, observed inventory valuation, map history and persistent sessions.
+- Adapt the MIT-licensed sattatracker log parser and inventory/protocol accounting
+  into a headless, low-priority worker. No Tauri/WebView runtime or extra overlay.
+- Keep market requests, SQLite and log parsing outside both advisor queues; update
+  the dashboard only while its section is visible.
+- Retain unpriced items, label partial history and stale prices, and support
+  season-scoped offline caching, optional 5% sale tax and independent opt-out.
+
+Open **Loot & Profit** from the dashboard sidebar. Tracking starts automatically
+when Riftline finds the game's actively written log. On first attachment, open
+the inventory once to synchronize its observed contents. Existing settings,
+advisor profiles and run history are preserved. First attachment can produce
+partial map history; missing prices and stale caches remain visible.
+
+This release adds accounting and does not change Vorax/Tartarus advice, models
+or recognition. Profit is an estimate at market snapshot prices, not guaranteed
+sale proceeds or an appraisal of random item affixes. Public price-service
+availability and live coverage across game installations are not guaranteed.
+
 ## [0.4.4] - 2026-11-01
 
 ### More resilient update checks

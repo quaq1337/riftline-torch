@@ -7,6 +7,17 @@ Public release notes are written in English. Public versioning starts at 0.1.0; 
 ### Planned
 - Complete independent full-run acceptance and extend Tartarus effect recognition.
 
+## [0.4.4] - 2026-11-01
+
+### More resilient update checks
+- Include the required certificate resource used by the build runtime's SSLContext constructor. Earlier frozen builds omitted it and could fail with FileNotFoundError before making an HTTPS request. Preserve the runtime's trust restrictions and certificate verification.
+- Automatic checks try the separate GitHub API host when the latest-release asset endpoint fails with a connection error or transient HTTP status. Manual checks retain the inverse fallback; neither path loops recursively.
+- Show the bounded underlying check error in the existing settings row and save one small latest-error diagnostic locally. No extra notification window, screenshot recording or telemetry upload is added.
+- Add a diagnostic-only frozen-EXE update check to verify the bundled network/TLS stack independently of the game and installed user profile.
+- Preserve HTTPS verification, strict release URL/platform/product/checksum validation and the existing download/install workflow. Invalid metadata is never silently accepted.
+
+This is endpoint redundancy within GitHub, not an independent mirror or a bypass of a complete GitHub network block. Vorax/Tartarus calculation, recognition, model files and user settings are unchanged from 0.4.3.
+
 ## [0.4.3] - 2026-11-01
 
 ### Vorax inactive-potion safeguards

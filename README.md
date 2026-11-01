@@ -16,8 +16,15 @@ Windows x64 and English game text are supported. Use borderless windowed mode. R
 | --- | --- |
 | Vorax | Card and target advice, score forecasts, special potion chains, starting instruments, pet settings, available-reroll evaluation and run history. |
 | Tartarus | **Preview.** Instrument, board, objective and reward recognition, one highlighted action, and model-based remaining-run Chromatic forecasts when current facts and effects are supported. |
+| Loot & Profit | Automatic log-based accounting, market-price estimates, FE/hour, observed inventory, map history and persistent sessions. |
 
 Tartarus is still being validated on independent PCs and complete live runs. Unknown effects or unread state can block advice. Forecasts are estimates under the implemented simulator, not guaranteed rewards or exact optimal play. An unread effect is not silently treated as absent.
+
+## Version 0.5.0 — Loot & Profit
+
+Open **Loot & Profit** in the dashboard sidebar for automatic log-based loot, expense, estimated FE/hour, observed inventory value and map/session history. Tracking starts when the game writes the discovered log. Open your inventory once after first attachment to synchronize observed contents. Partial maps and items without prices are labelled; they are not assumed complete.
+
+Accounting runs in a separate low-priority process, with market requests outside the advisor queues. Vorax/Tartarus advice, recognition and models are unchanged from 0.4.4. Prices are estimates from optional public ETOR snapshots and are cached locally; disable market downloads independently of tracking. No logs, inventory or player data are uploaded to the price service.
 
 ## Version 0.3.10
 
@@ -61,6 +68,8 @@ This is a distribution repository containing documentation and release downloads
 ## Credits
 
 Vorax builds on the MIT-licensed [Moebing simulator](https://github.com/Moebing/Torchlight-Infinite-SS11-Vorax-simulator). Tartarus uses pinned resources from the original [Tartarus simulator](https://github.com/blahdot3h/tartarus-simulator). [TLI Overlay Plus](https://github.com/Giboork/tli-overlay-plus) informed interoperability research; its proprietary application is not redistributed.
+
+Loot & Profit adapts the MIT-licensed log parser and slot/protocol accounting from [sattatrapy/sattatracker](https://github.com/sattatrapy/sattatracker-TLI-Tauri-public). The full copyright notice is bundled with Riftline. No upstream executable, Tauri/WebView runtime or image pack is included.
 
 Riftline is independent and is not affiliated with or endorsed by the game's developers or publishers. Game-derived names and artwork retain their respective rights.
 
